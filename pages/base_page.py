@@ -11,6 +11,10 @@ class BasePage:
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
 
+    def wait_until_element_invisibility(self, locator):
+        WebDriverWait(self.driver, 10).until(expected_conditions.invisibility_of_element_located(locator))
+        return self.driver.find_element(*locator)
+
     def click_to_element(self, locator):
         WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator))
         return self.driver.find_element(*locator).click()
@@ -58,4 +62,8 @@ class BasePage:
         )
         ActionChains(self.driver).drag_and_drop(source, target).perform()
 
+    def wait_until_element_disappears(self, locator, timeout: int = 10):
+        WebDriverWait(self.driver, timeout).until(expected_conditions.invisibility_of_element_located(locator))
 
+    def wait_for_order_number_to_change(self, locator, old_number: int, timeout: int = 10):
+        WebDriverWait(self.driver, timeout).until_not(expected_conditions.text_to_be_present_in_element(locator, str(old_number)))
