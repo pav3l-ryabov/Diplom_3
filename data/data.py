@@ -4,6 +4,7 @@ URL_FORGOT_PASSWORD_PAGE = '/forgot-password'
 URL_RESET_PASSWORD_PAGE = '/reset-password'
 URL_PERSONAL_ACCOUNT_PAGE = '/account/profile'
 URL_ORDER_HISTORY_PAGE = '/account/order-history'
+URL_ORDER_FEED_PAGE = '/feed'
 
 TEST_MAIL = 'ryabov400@mail.ru'
 TEST_PASS = 'ryabov400@mail.ru'

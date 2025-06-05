@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -43,3 +44,18 @@ class BasePage:
 
     def wait_for_element_to_be_clickable(self, locator, timeout=10):
         WebDriverWait(self.driver, timeout).until(expected_conditions.element_to_be_clickable(locator))
+
+    def click_to_element_with_actionchains(self, locator):
+        element = self.driver.find_element(*locator)
+        ActionChains(self.driver).click(element).perform()
+
+    def drag_and_drop(self, source_locator, target_locator, timeout=10):
+        source = WebDriverWait(self.driver, timeout).until(
+            expected_conditions.presence_of_element_located(source_locator)
+        )
+        target = WebDriverWait(self.driver, timeout).until(
+            expected_conditions.presence_of_element_located(target_locator)
+        )
+        ActionChains(self.driver).drag_and_drop(source, target).perform()
+
+
