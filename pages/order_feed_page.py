@@ -1,15 +1,6 @@
-from selenium.webdriver import ActionChains, Keys
-from selenium.webdriver.support import expected_conditions as EC
-
 import allure
-from selenium.common import TimeoutException, ElementClickInterceptedException, ElementNotInteractableException
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
-from locators.base_page_locators import BasePageLocators
-from locators.login_page_locators import LoginPageLocators
 from locators.main_func_locators import MainFuncLocators
-from locators.password_recovery_locators import PasswordRecoveryPageLocators
 from pages.base_page import BasePage
 
 class OrderFeedPage(BasePage):

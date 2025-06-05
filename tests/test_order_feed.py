@@ -1,26 +1,11 @@
-import time
-
-from selenium.common import ElementClickInterceptedException
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import wait
-
 import allure
 import pytest
 
-from data.data import URL_MAIN_PAGE, URL_FORGOT_PASSWORD_PAGE, URL_LOGIN_PAGE, URL_RESET_PASSWORD_PAGE, TEST_MAIL, \
-    TEST_PASS, URL_PERSONAL_ACCOUNT_PAGE, URL_ORDER_HISTORY_PAGE, URL_ORDER_FEED_PAGE
+from data.data import URL_MAIN_PAGE, URL_LOGIN_PAGE, TEST_MAIL, \
+    TEST_PASS, URL_ORDER_FEED_PAGE
 from locators.main_func_locators import MainFuncLocators
-from locators.password_recovery_locators import PasswordRecoveryPageLocators
-from pages import main_page
-from pages.login_page import LoginPage
 from pages.main_func_page import MainFuncPage
-from pages.main_page import MainPage
 from pages.order_feed_page import OrderFeedPage
-from pages.password_recovery_page import PasswordRecoveryPage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 from pages.personal_account_page import PersonalAccountPage
 
 
@@ -93,7 +78,7 @@ class TestOrderFeed:
 
     @allure.title('Тест появления номера заказа в работе"')
     @pytest.mark.parametrize('driver', ['chrome', 'firefox'], indirect=True)
-    def test_one_day_time_counter_order(self, driver):
+    def test_track_num_in_order_list(self, driver):
         driver.get(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
 
         personal_account_page = PersonalAccountPage(driver)

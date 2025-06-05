@@ -1,20 +1,10 @@
-import time
-
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import wait
-
 import allure
 import pytest
 
-from data.data import URL_MAIN_PAGE, URL_FORGOT_PASSWORD_PAGE, URL_LOGIN_PAGE, URL_RESET_PASSWORD_PAGE, TEST_MAIL
+from data.data import URL_MAIN_PAGE, URL_FORGOT_PASSWORD_PAGE, URL_LOGIN_PAGE, TEST_MAIL
 from locators.password_recovery_locators import PasswordRecoveryPageLocators
-from pages import main_page
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
 from pages.password_recovery_page import PasswordRecoveryPage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestPasswordRecoveryPage:

@@ -1,7 +1,5 @@
 import allure
 
-from locators.base_page_locators import BasePageLocators
-from locators.login_page_locators import LoginPageLocators
 from locators.password_recovery_locators import PasswordRecoveryPageLocators
 from pages.base_page import BasePage
 

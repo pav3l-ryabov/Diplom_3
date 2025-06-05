@@ -1,25 +1,10 @@
-import time
-
-from selenium.common import ElementClickInterceptedException
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import wait
-
 import allure
 import pytest
 
-from data.data import URL_MAIN_PAGE, URL_FORGOT_PASSWORD_PAGE, URL_LOGIN_PAGE, URL_RESET_PASSWORD_PAGE, TEST_MAIL, \
-    TEST_PASS, URL_PERSONAL_ACCOUNT_PAGE, URL_ORDER_HISTORY_PAGE, URL_ORDER_FEED_PAGE
+from data.data import URL_MAIN_PAGE, URL_LOGIN_PAGE, TEST_MAIL, \
+    TEST_PASS, URL_ORDER_FEED_PAGE
 from locators.main_func_locators import MainFuncLocators
-from locators.password_recovery_locators import PasswordRecoveryPageLocators
-from pages import main_page
-from pages.login_page import LoginPage
 from pages.main_func_page import MainFuncPage
-from pages.main_page import MainPage
-from pages.password_recovery_page import PasswordRecoveryPage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 from pages.personal_account_page import PersonalAccountPage
 
 
