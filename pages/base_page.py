@@ -7,6 +7,11 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    def get_url_page(self, path):
+        full_url = f"{path}"
+        self.driver.get(full_url)
+        return self
+
     def find_element_with_wait(self, locator):
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)

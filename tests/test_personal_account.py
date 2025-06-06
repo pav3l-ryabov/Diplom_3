@@ -11,9 +11,8 @@ class TestPersonalAccount:
     @allure.title('Тест перехода в личный кабинет')
     @pytest.mark.parametrize('driver', ['chrome', 'firefox'], indirect=True)
     def test_open_personal_account_page(self, driver):
-        driver.get(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
-
         personal_account_page = PersonalAccountPage(driver)
+        personal_account_page.get_url_page(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
         personal_account_page.enter_email_on_authorization_page(TEST_MAIL)
         personal_account_page.enter_password_on_authorization_page(TEST_PASS)
         personal_account_page.click_on_auth_button()
@@ -27,9 +26,8 @@ class TestPersonalAccount:
     @allure.title('Тест перехода на страницу "История заказов"')
     @pytest.mark.parametrize('driver', ['chrome', 'firefox'], indirect=True)
     def test_open_order_history_page(self, driver):
-        driver.get(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
-
         personal_account_page = PersonalAccountPage(driver)
+        personal_account_page.get_url_page(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
         personal_account_page.enter_email_on_authorization_page(TEST_MAIL)
         personal_account_page.enter_password_on_authorization_page(TEST_PASS)
         personal_account_page.click_on_auth_button()
@@ -46,9 +44,8 @@ class TestPersonalAccount:
     @allure.title('Тест авторизации и последующего логаута')
     @pytest.mark.parametrize('driver', ['chrome', 'firefox'], indirect=True)
     def test_login_and_logout(self, driver):
-        driver.get(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
-
         personal_account_page = PersonalAccountPage(driver)
+        personal_account_page.get_url_page(f'{URL_MAIN_PAGE}{URL_LOGIN_PAGE}')
         personal_account_page.enter_email_on_authorization_page(TEST_MAIL)
         personal_account_page.enter_password_on_authorization_page(TEST_PASS)
         personal_account_page.click_on_auth_button()
